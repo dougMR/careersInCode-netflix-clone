@@ -1,0 +1,55 @@
+h1,h2,h3,h4,h5,h6,p,ul,li {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+body {
+    background-color: yellow;
+    font-size: 16px;
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'pier_sanslight';
+    src: url('../fonts/pier-sans/piersans-light-webfont.woff2') format('woff2'),
+         url('../fonts/pier-sans/piersans-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'pier_sansregular';
+    src: url('../fonts/pier-sans/piersans-regular-webfont.woff2') format('woff2'),
+         url('../fonts/pier-sans/piersans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'pier_sansmedium';
+    src: url('../fonts/pier-sans/piersans-medium-webfont.woff2') format('woff2'),
+         url('../fonts/pier-sans/piersans-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'pier_sansbold';
+    src: url('../fonts/pier-sans/piersans-bold-webfont.woff2') format('woff2'),
+         url('../fonts/pier-sans/piersans-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'pier_sansblack';
+    src: url('../fonts/pier-sans/piersans-black-webfont.woff2') format('woff2'),
+         url('../fonts/pier-sans/piersans-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
