@@ -343,9 +343,8 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   font: inherit;
 }
 
-body {
-  background-color: #141414;
-  font-size: 16px;
+* {
+  box-sizing: border-box;
 }
 
 /* Fonts */
@@ -378,6 +377,91 @@ body {
   src: url("../fonts/pier-sans/piersans-black-webfont.woff2") format("woff2"), url("../fonts/pier-sans/piersans-black-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+}
+body {
+  background-color: #1F1F1F;
+  font-family: "pier_sansregular";
+  color: white;
+  font-size: 16px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 65px;
+  padding: 0 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: yellow;
+}
+header nav {
+  display: flex;
+  align-items: center;
+}
+header .header-logo .header-logo-image {
+  display: block;
+  width: 92px;
+  height: 55px;
+  background: url("../images/netflix-logo.svg") no-repeat center center;
+  background-size: contain;
+  will-change: transform;
+  transition: 0.25s ease-in-out;
+}
+header .header-logo .header-logo-image:hover {
+  transform: scale(1.2);
+}
+header ul.menu {
+  list-style: none;
+  display: flex;
+  background-color: aqua;
+}
+header ul.menu li a {
+  margin: 0 10px;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  margin: 0 auto;
+}
+main .profiles-selection-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: calc( 100vh - 65px );
+  margin-top: 65px;
+  background-color: limegreen;
+}
+main .profiles-selection-container h1 {
+  display: block;
+  font-family: "pier_sansregular";
+  font-size: 52px;
+}
+main .profiles-selection-container .profiles-selection-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+main .profiles-selection-container .profiles-selection-row .profiles-container {
+  text-align: center;
+}
+main .profiles-selection-container .profiles-selection-row .profiles-container .profile-image {
+  width: 150px;
+  height: 150px;
+  border: 5px solid #1F1F1F;
+  transition: 2s ease-in-out;
+}
+main .profiles-selection-container .profiles-selection-row .profiles-container h2 {
+  color: #808080;
+}
+main .profiles-selection-container .profiles-selection-row .profiles-container:hover .profile-image {
+  border: 5px solid white;
 }
 
 /*# sourceMappingURL=style.css.map */
