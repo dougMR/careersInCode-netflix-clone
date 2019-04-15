@@ -6,32 +6,210 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Netflix Home</title>
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
-<body>
-    <header>
-        <nav>
-            <a href="index.html" class="header-logo">
-                <div class="header-logo-image"></div>
-            </a>
-            <ul class="menu">
+<body class="homepage">
+<header>
+        <a href="index.html" class="header-logo">
+            <div class="header-logo-image"></div>
+        </a>
+        <i class="material-icons menu-icon">
+            menu
+        </i>
+        <ul class="menu">
+            <li>
+                <a href="#" class="active-link">Home</a>
+            </li>
+            <li>
+                <a href="#">TV Shows</a>
+            </li>
+            <li>
+                <a href="#">Movies</a>
+            </li>
+            <li>
+                <a href="#">Recently Added</a>
+            </li>
+            <li>
+                <a href="#">My List</a>
+            </li>
+        </ul>
+        <div class="actions-menu">
+            <i class="material-icons">
+                search
+            </i>
+            <ul class="secondary-links">
                 <li>
-                    <a href="#">Home</a>
+                    KIDS
                 </li>
                 <li>
-                    <a href="#">TV Shows</a>
-                </li>
-                <li>
-                    <a href="#">Movies</a>
-                </li>
-                <li>
-                    <a href="#">Recently Added</a>
-                </li>
-                <li>
-                    <a href="#">My List</a>
+                    DVD
                 </li>
             </ul>
-        </nav>
+            <i class="material-icons notifications-icon">
+                notifications
+            </i>
+            <div class="profiles-container">
+                <div class="profile-picture"></div>
+                <i class="material-icons"> arrow_drop_down </i>
+            </div>
+        </div>
     </header>
-    homepage content goes here
+    <section class="featured-preview">
+        <div class="featured-preview-content">
+            <div class="featured-preview-buttons">
+                <button id="play-pause-button" class="button">
+                    <span class="play-controls">
+                        <i class="material-icons">play_arrow</i>
+                        Play 
+                    </span>
+                    <span class="pause-controls">
+                        <i class="material-icons"> pause </i>
+                        Pause
+                    </span>
+                </button>
+                <button class="button">
+                    <span>
+                        <i class="material-icons">add</i>
+                        My List
+                    </span>
+                </button>
+            </div> <!-- / featured-preview-buttons -->
+            <p class="featured-preview-description">
+                    From the frozen tundra in the north to the dry forests of the equator, Sir David Attenborough narrates a compelling view of the planet.
+            </p>
+        </div> <!-- / featured-preview-content -->
+        <video id="featured-video" width="100%" height="100%" loop autoplay muted>
+            <source src="videos/stock-video-space.mp4" type="video/mp4" >
+        </video>
+    </section>
+    <main>
+        <section class="list-row-container">
+            <h2>
+                New Releases
+            </h2>
+            <div class="list-row">
+                <div class="list-item">
+                    <img src="images/ozark.jpg" alt="Ozark splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/the-order.jpg" alt="The Order splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/stranger-things.jpg" alt="Stranger Things splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/joe-rogan.jpg" alt="Joe Rogan splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/chefs-table.jpg" alt="Chef's Table splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/highway-men.jpg" alt="The Highwaymen splash image" class="list-item-img">
+                </div>
+            </div>
+        </section>
+        <section class="list-row-container">
+            <h2>
+                Trending Now
+            </h2>
+            <div class="list-row">
+                <div class="list-item">
+                    <img src="images/ozark.jpg" alt="Ozark splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/the-order.jpg" alt="The Order splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/stranger-things.jpg" alt="Stranger Things splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/joe-rogan.jpg" alt="Joe Rogan splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/chefs-table.jpg" alt="Chef's Table splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/highway-men.jpg" alt="The Highwaymen splash image" class="list-item-img">
+                </div>
+            </div>
+        </section>
+        <section class="list-row-container">
+            <h2>
+                My List
+            </h2>
+            <div class="list-row">
+                <div class="list-item">
+                    <img src="images/ozark.jpg" alt="Ozark splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/the-order.jpg" alt="The Order splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/stranger-things.jpg" alt="Stranger Things splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/joe-rogan.jpg" alt="Joe Rogan splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/chefs-table.jpg" alt="Chef's Table splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/highway-men.jpg" alt="The Highwaymen splash image" class="list-item-img">
+                </div>
+            </div>
+        </section>
+        <section class="list-row-container">
+            <h2>
+                New Releases
+            </h2>
+            <div class="list-row tall-thumbnails">
+                <div class="list-item">
+                    <img src="images/master-of-none.webp" alt="Ozark splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/fyre-festival.webp" alt="The Order splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/kevin-hart.webp" alt="Stranger Things splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/triple-frontier.webp" alt="Joe Rogan splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/umbrella-academy.webp" alt="Chef's Table splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/last-kingdom.webp" alt="The Highwaymen splash image" class="list-item-img">
+                </div>
+            </div>
+        </section>
+        <section class="list-row-container">
+            <h2>
+                Continue Watching for Jeremy
+            </h2>
+            <div class="list-row">
+                <div class="list-item">
+                    <img src="images/ozark.jpg" alt="Ozark splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/the-order.jpg" alt="The Order splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/stranger-things.jpg" alt="Stranger Things splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/joe-rogan.jpg" alt="Joe Rogan splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/chefs-table.jpg" alt="Chef's Table splash image" class="list-item-img">
+                </div>
+                <div class="list-item">
+                    <img src="images/highway-men.jpg" alt="The Highwaymen splash image" class="list-item-img">
+                </div>
+            </div>
+        </section>
+    </main>
+    
 </body>
 </html>

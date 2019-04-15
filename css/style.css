@@ -396,11 +396,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  background: yellow;
-}
-header nav {
-  display: flex;
-  align-items: center;
+  z-index: 100000;
 }
 header .header-logo .header-logo-image {
   display: block;
@@ -414,13 +410,119 @@ header .header-logo .header-logo-image {
 header .header-logo .header-logo-image:hover {
   transform: scale(1.2);
 }
-header ul.menu {
-  list-style: none;
-  display: flex;
-  background-color: aqua;
+header .menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  margin-left: 30px;
+  transition: 0.2s ease-in-out;
 }
-header ul.menu li a {
+header .menu-icon:hover {
+  color: #C5C5C5;
+  cursor: pointer;
+}
+header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+}
+header ul li a {
+  text-decoration: none;
+  color: white;
   margin: 0 10px;
+}
+header ul.menu {
+  margin-left: 50px;
+  font-size: 0.9rem;
+}
+header ul.menu li a.active-link {
+  font-family: "pier_sansbold";
+}
+header .actions-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: auto;
+}
+header .actions-menu .notifications-icon {
+  position: relative;
+  margin: 0 14px;
+}
+header .actions-menu .notifications-icon::after {
+  content: "3";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  background-color: #B9090B;
+  font-size: 10px;
+  font-family: "pier_sansbold";
+  color: white;
+  position: absolute;
+  top: -2px;
+  right: -4px;
+}
+header .actions-menu .profiles-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 10px;
+}
+header .actions-menu .profiles-container .profile-picture {
+  width: 32px;
+  height: 32px;
+  background: url(../images/dog.png) no-repeat;
+  background-position: center center;
+  background-size: contain;
+  margin-right: 5px;
+}
+@media all and (max-width: 1000px) {
+  header .actions-menu ul.secondary-links {
+    display: none;
+  }
+}
+@media all and (max-width: 876px) {
+  header {
+    background-color: #000;
+    padding: 0 20px;
+  }
+  header .header-logo .header-logo-image {
+    background: url(../images/netflix-logo-small.svg) no-repeat center center;
+    background-size: contain;
+    width: 36px;
+    height: 36px;
+  }
+  header .menu-icon {
+    display: inline;
+  }
+  header ul.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    transform: translateY(-100%);
+    width: 100%;
+    margin: 0;
+    padding: 40px 0;
+    background-color: #000;
+    transition: 0.25s ease-in-out;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  header ul.menu li {
+    margin-bottom: 20px;
+  }
+  header ul.menu li a {
+    font-size: 1.2rem;
+  }
 }
 
 main {
@@ -429,39 +531,234 @@ main {
   height: auto;
   margin: 0 auto;
 }
-main .profiles-selection-container {
+
+.profiles-selection-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   min-height: calc( 100vh - 65px );
   margin-top: 65px;
-  background-color: limegreen;
 }
-main .profiles-selection-container h1 {
+.profiles-selection-container h1 {
   display: block;
   font-family: "pier_sansregular";
   font-size: 52px;
-}
-main .profiles-selection-container .profiles-selection-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-main .profiles-selection-container .profiles-selection-row .profiles-container {
   text-align: center;
+  margin-bottom: 20px;
 }
-main .profiles-selection-container .profiles-selection-row .profiles-container .profile-image {
+@media all and (max-width: 876px) {
+  .profiles-selection-container h1 {
+    font-size: 36px;
+  }
+}
+.profiles-selection-container .profiles-selection-row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.profiles-selection-container .profiles-selection-row a.individual-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 20px;
+}
+.profiles-selection-container .profiles-selection-row a.individual-profile .profile-image {
   width: 150px;
   height: 150px;
   border: 5px solid #1F1F1F;
-  transition: 2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  background: url(../images/dog.png) no-repeat center center;
+  background-size: contain;
 }
-main .profiles-selection-container .profiles-selection-row .profiles-container h2 {
+@media all and (max-width: 990px) {
+  .profiles-selection-container .profiles-selection-row a.individual-profile .profile-image {
+    width: 100px;
+    height: 100px;
+  }
+}
+.profiles-selection-container .profiles-selection-row a.individual-profile h2 {
   color: #808080;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  transition: 0.2s ease-in-out;
 }
-main .profiles-selection-container .profiles-selection-row .profiles-container:hover .profile-image {
+.profiles-selection-container .profiles-selection-row a.individual-profile:hover .profile-image {
   border: 5px solid white;
+}
+.profiles-selection-container .profiles-selection-row a.individual-profile:hover h2 {
+  color: white;
+}
+.profiles-selection-container .profiles-selection-row a.individual-profile:nth-of-type(2) .profile-image {
+  background: url(../images/face-red.png) no-repeat center center;
+  background-size: contain;
+}
+.profiles-selection-container .profiles-selection-row a.individual-profile:nth-of-type(3) .profile-image {
+  background: url(../images/face-green.png) no-repeat center center;
+  background-size: contain;
+}
+.profiles-selection-container .profiles-selection-row a.individual-profile:nth-of-type(4) .profile-image {
+  background: url(../images/face-yellow.png) no-repeat center center;
+  background-size: contain;
+}
+.profiles-selection-container .profiles-selection-row a.individual-profile:nth-of-type(5) .profile-image {
+  background: url(../images/kids-section.png) no-repeat center center;
+  background-size: contain;
+}
+.profiles-selection-container a.profiles-button {
+  border: 1px solid #808080;
+  color: #808080;
+  padding: 10px 15px;
+  margin-top: 80px;
+  text-decoration: none;
+}
+.profiles-selection-container a.profiles-button:hover {
+  border: 1px solid white;
+  color: white;
+}
+
+.homepage section.featured-preview {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.homepage section.featured-preview:after {
+  content: "";
+  width: 100%;
+  height: 125px;
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  z-index: 10;
+  background: linear-gradient(to top, #1F1F1F, transparent);
+}
+.homepage section.featured-preview #featured-video {
+  width: 100%;
+  height: auto;
+}
+.homepage section.featured-preview .featured-preview-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  margin: 50px 0 0 60px;
+  position: absolute;
+  z-index: 100;
+}
+.homepage section.featured-preview .featured-preview-content .featured-preview-buttons button {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-family: "pier_sansbold";
+  border: none;
+  padding: 10px 20px;
+  border-radius: 2px;
+}
+.homepage section.featured-preview .featured-preview-content .featured-preview-buttons button span {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.homepage section.featured-preview .featured-preview-content .featured-preview-buttons button span.play-controls {
+  display: none;
+}
+.homepage section.featured-preview .featured-preview-content .featured-preview-description {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  color: #fff;
+  text-shadow: 0.5rem 0.5rem 1rem black;
+  width: 40%;
+  margin-top: 20px;
+}
+@media all and (max-width: 1000px) {
+  .homepage section.featured-preview .featured-preview-content {
+    align-items: center;
+    margin: 65px 0 0 0;
+  }
+  .homepage section.featured-preview .featured-preview-content .featured-preview-description {
+    display: none;
+  }
+}
+@media all and (max-width: 540px) {
+  .homepage section.featured-preview .featured-preview-content {
+    justify-content: flex-start;
+    margin-top: 85px;
+  }
+}
+.homepage main {
+  position: relative;
+  z-index: 100;
+  margin-top: -76px;
+  padding: 0 60px;
+}
+.homepage main .list-row-container {
+  margin-bottom: 50px;
+}
+.homepage main .list-row-container h2 {
+  font-family: "pier_sansmedium";
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+.homepage main .list-row-container .list-row {
+  display: flex;
+  justify-content: space-between;
+}
+.homepage main .list-row-container .list-row .list-item {
+  width: calc( (100% / 6 ) - 0.5rem );
+  transition: 0.35s ease-in-out;
+}
+.homepage main .list-row-container .list-row .list-item:hover {
+  transform: scale(1.75);
+  box-shadow: 0 0 2rem black;
+  z-index: 102;
+}
+.homepage main .list-row-container .list-row .list-item img.list-item-img {
+  display: block;
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  user-select: none;
+  cursor: pointer;
+}
+.homepage main .list-row-container .list-row.tall-thumbnails .list-item:hover {
+  transform: scale(1.2);
+}
+@media all and (max-width: 1000px) {
+  .homepage main .list-row-container .list-row {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .homepage main .list-row-container .list-row .list-item {
+    min-width: 150px;
+    margin: 0 10px 10px 0;
+  }
+}
+@media all and (max-width: 876px) {
+  .homepage main {
+    padding: 0 20px;
+  }
+}
+@media all and (max-width: 540px) {
+  .homepage main {
+    margin-top: 0;
+  }
+  .homepage main .list-row-container .list-row .list-item {
+    min-width: 150px;
+    flex-grow: 1;
+  }
+  .homepage main .list-row-container .list-row .list-item img.list-item-img {
+    max-width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

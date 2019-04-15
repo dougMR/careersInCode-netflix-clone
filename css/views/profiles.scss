@@ -1,53 +1,99 @@
-main {
+
+.profiles-selection-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    max-width: 1200px;
-    height: auto;
-    margin: 0 auto;
-    .profiles-selection-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        min-height: calc( 100vh - 65px ); //65px is navbar height
-        margin-top: 65px;
-        background-color: limegreen;
-        h1 {
-            display: block;
-            font-family: 'pier_sansregular';
-            font-size: 52px;
-            text-align: center;
-            margin-bottom: 20px;
+    min-height: calc( 100vh - 65px ); //65px is navbar height
+    margin-top: 65px;
+    // background-color: limegreen;
+    h1 {
+        display: block;
+        font-family: 'pier_sansregular';
+        font-size: 52px;
+        text-align: center;
+        margin-bottom: 20px;
+        @media all and (max-width:876px){
+            font-size: 36px;
         }
-        .profiles-selection-row {
+    }
+    .profiles-selection-row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        a.individual-profile {
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            a.individual-profile {
-                text-decoration: none;
-                text-align: center;
-                margin: 0 20px;
-                .profile-image {
-                    width: 150px;
-                    height: 150px;
-                    border: 5px solid $netflix_black;
-                    transition: .2s ease-in-out;
-                }
-                h2 {
-                    color: $netflix_grey;
-                    margin-top: 20px;
-                    font-size: 1.2rem;
-                    transition: 0.2s ease-in-out;
-                }
-                &:hover {
-                    .profile-image {
-                        border: 5px solid white;
-                    }
-                    h2 {
-                        color: white;
-                    }
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            flex: 1;
+            text-decoration: none;
+            text-align: center;
+            margin: 0 20px;
+            .profile-image {
+                width: 150px;
+                height: 150px;
+                border: 5px solid $netflix_black;
+                transition: .2s ease-in-out;
+                background: url(../images/dog.png) no-repeat center center;
+                background-size: contain;
+                @media all and (max-width:990px){
+                    width: 100px;
+                    height: 100px;
                 }
             }
+            h2 {
+                color: $netflix_grey;
+                margin-top: 20px;
+                font-size: 1.2rem;
+                transition: 0.2s ease-in-out;
+            }
+            &:hover {
+                .profile-image {
+                    border: 5px solid white;
+                }
+                h2 {
+                    color: white;
+                }
+            }
+            &:nth-of-type(2) {
+                .profile-image {
+                    background: url(../images/face-red.png) no-repeat center center;
+                    background-size: contain;
+                }
+            }
+            &:nth-of-type(3) {
+                .profile-image {
+                    background: url(../images/face-green.png) no-repeat center center;
+                    background-size: contain;
+                }
+            }
+            &:nth-of-type(4) {
+                .profile-image {
+                    background: url(../images/face-yellow.png) no-repeat center center;
+                    background-size: contain;
+                }
+            }
+            &:nth-of-type(5) {
+                .profile-image {
+                    background: url(../images/kids-section.png) no-repeat center center;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+    a.profiles-button {
+        border: 1px solid $netflix_grey;
+        color: $netflix_grey;
+        padding: 10px 15px;
+        margin-top: 80px;
+        text-decoration: none;
+        &:hover {
+            border: 1px solid white;
+            color: white;
         }
     }
 }
