@@ -42,8 +42,23 @@
                         justify-content: center;
                         align-items: center;
                     }
-                    span.play-controls {
-                        display: none;
+                }
+                #play-pause-button {
+                    &.play-video {
+                        span.play-controls {
+                            display: flex;
+                        }
+                        span.pause-controls {
+                            display: none;
+                        }
+                    }
+                    &.pause-video {
+                        span.play-controls {
+                            display: none;
+                        }
+                        span.pause-controls {
+                            display: flex;
+                        }
                     }
                 }
             }

@@ -669,8 +669,17 @@ main {
   justify-content: center;
   align-items: center;
 }
-.homepage section.featured-preview .featured-preview-content .featured-preview-buttons button span.play-controls {
+.homepage section.featured-preview .featured-preview-content .featured-preview-buttons #play-pause-button.play-video span.play-controls {
+  display: flex;
+}
+.homepage section.featured-preview .featured-preview-content .featured-preview-buttons #play-pause-button.play-video span.pause-controls {
   display: none;
+}
+.homepage section.featured-preview .featured-preview-content .featured-preview-buttons #play-pause-button.pause-video span.play-controls {
+  display: none;
+}
+.homepage section.featured-preview .featured-preview-content .featured-preview-buttons #play-pause-button.pause-video span.pause-controls {
+  display: flex;
 }
 .homepage section.featured-preview .featured-preview-content .featured-preview-description {
   font-size: 1.3rem;
